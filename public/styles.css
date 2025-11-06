@@ -1,81 +1,53 @@
+/* Using Inter font as default in Tailwind (included in home.html) */
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #1f2937; /* Dark Gray */
 }
 
-header {
-  background-color: #2c3e50;
-  padding: 20px;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-}
-
-header nav a {
-  color: #ecf0f1;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 600;
-  font-size: 1.1em;
-}
-
-header nav a:hover {
-  color: #3498db;
-}
+/* Header styles applied via Tailwind in home.html */
 
 .main {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 0 20px;
+  /* max-width is handled via max-w-5xl class in home.html */
+  padding: 2rem;
 }
 
-h1, h2 {
-  text-align: center;
-  margin-bottom: 20px;
+h1, h2, h3 {
+  /* text-align and margin are handled via Tailwind classes in home.html */
 }
 
-.category-grid, .product-grid {
+.category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px; /* gap-6 */
 }
 
 .card {
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 20px;
+  border-radius: 12px; /* rounded-xl */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-md */
+  padding: 24px; /* p-6 */
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e5e7eb; /* border-gray-200 */
 }
 
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
 }
 
 button {
-  background: #3498db;
-  color: white;
+  /* Button styles handled via Tailwind classes in home.html */
   border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
 }
 
-button:hover {
-  background: #2980b9;
-}
-
-@media(max-width: 600px) {
-  header {
-    flex-direction: column;
-  }
-
-  header nav a {
-    margin: 10px 0;
+@media(max-width: 768px) {
+  .category-grid {
+    grid-template-columns: 1fr;
   }
 }
